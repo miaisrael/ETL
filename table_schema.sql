@@ -67,6 +67,37 @@ CREATE TABLE race_data_2020 (
  	total_voters int
 );
 
+
+create table fulton_trump_2020 (
+	race varchar,
+	candidate varchar,
+	total_votes int,
+	absentee_by_mail int,
+	advance_in_person int,
+	election_name varchar,
+	election_date date,
+	registered_voters int,
+	ballots_cast int,
+	voter_turnout varchar
+);
+	
+create table fulton_biden_2020 (
+	race varchar,
+	candidate varchar,
+	total_votes int,
+	absentee_by_mail int,
+	advance_in_person int,
+	election_name varchar,
+	election_date date,
+	registered_voters int,
+	ballots_cast int,
+	voter_turnout varchar
+);
+
 ---Check that data loaded
 select * from primary_2016_ga
 select * from election_2020_ga
+select * from race_data_2016
+select * from race_data_2020
+select * from fulton_trump_2020
+select * from fulton_biden_2020
