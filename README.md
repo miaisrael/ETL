@@ -19,7 +19,7 @@ The 2016 and 2020 election data were cleaned similarly.  First, the two CSV file
 
 ### Load
 
-Once the dataframes were finalized, they were connected and loaded into the GA Election Database (ga_election_db) created in Postgresql, and formatted using pgAdmin 4. A total of eight tables were created in this database. Once the tables were created, 
+Once the dataframes were finalized, they were connected and loaded into the GA Election Database (ga_election_db) created in Postgresql, and formatted using pgAdmin 4. A total of eight tables were created in this database. Once the tables were created, the data from each dataframe was imported using SQLAlchemy.  The code "pd.read_sql_query" was used to verify that the data loaded properly into each SQL table.  Once all of the data was confirmed to have loaded correctly, a sample query was created using SQLAlchemy to demonstrate a possible use of the data, and demonstrate that the tables were appropriately connected within the database.  The sample query is shows in the Election_Data_Cleaning notebook.
 
 The final collections included in this database are:
 Biden_2020
