@@ -33,7 +33,9 @@ Trump_2020
 
 # Conclusions
 
-Suggested analyses using the Election Database include:
+Georgia was a hotly contested state in the 2020 presidential election and continues to be of great national interest.  This database could be used to analyze various factors leading to the change in Georiga.  Some possible analysis could include:
+
+the change in voter populations between 2016
 
 Because these data are static and were collected after the 2016 and 2020 election results were finalized, they only need to be sent at one point in time. Some limitations to the data sources in this database are that the national election results, the Georgia race and gender results, and the Fulton County results all come from different, though reliable, sources. Georgia 2020 primary results were not available and thus cannot be analyzed for comparison to 2016. When and if those become available for access, consider adding to this database for further analyses. 
 
