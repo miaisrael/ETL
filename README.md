@@ -10,11 +10,15 @@ The purpose of this project was to demonstrate skills necessary for extracting d
 
 The data sources compiled include four CSV files publicly accessed through Kaggle and georgia.gov. The Fulton County data was extracted using the Fulton County API, powered by Socrata, and returned as a JSON object. The national election data for 2016 and 2020 were found on Kaggle.  Each dataset had one CSV included that contained state, county, party and voter information, as well as additional columns.  These CSV files were ideal since they provided a county-level breakdown of election information. Other datasets that contained only state level information were reviewed, but discarded.  Since the focus was on only the state of Georgia, the granularity of county level data was ideal.The two Kaggle datasets include national voter information to the county level by state.  The Georgia Secretary of State datasets include county-level voter information by race and gender. The race categories are Asian American/Pacific Islander (asia_pi), Black Non-Hispanic (black), Native American (native_am), Other (other), Unknown (unknown), and White (white). The gender categories are Female, Male, and Unknown. A relational database is needed because some potential analyses will require queries that join tables. 
 
+In order to extract data via APIs, multiple data sources were analyzed, but most of them require a paymet/fee and were extremely documentation heavy such as the Google Civic Info API. We conducted API calls to the Fulton County open data.gov website and extracted data using the GET function and limited our calls to the first 2000 rows and converted them into a Dataframe.
+
 ### Transform
 
 The Secretary of State datasets were first cleaned manually in Excel to remove the race categories abbreviations key rows and instruction rows. This set the column headers as the first row of each dataset. The 2020 dataset included a 160th row totaling the votes per race category, but the 2016 dataset did not. Using the Excel sum function, a 160th row for totals was added. Both datasets were then imported into pandas and loaded as dataframes. Additional cleaning included deleting the “County ID”/”County Code” columns from each because they were identical to the index.
 
 The 2016 and 2020 election data were cleaned similarly.  First, the two CSV files were loaded into a Jupyter Notebook and cleaned usings Pandas dataframes.  In order to join approproriately with other tables in the database, the column names had to be formatted with all lower case headings and no spaces between words within a heading.  Each dataframe was filtered to show only the counties in Georgia.  The county were initially formatted as "Name County."  In order to join with other tables in the database, the word "County" was removed from the column, and the county name was converted to all capital letters.  Next, the data frames were filtered into two separate frames, one for each political party (Republican and Democrat.)  These separate dataframes were merged into a single dataframe.  The 2016 dataset included multiple entries for each county, so the merged dataframe was grouped by county name to and the sum of votes were calculated.  This allowed the final 2016 dataframe to show the total number of Republican votes, total number of Democrat votes and the total number of votes for each county.  The 2020 dataframe showed the same data without the additional grouping required.
+
+One of the first issues using the Fulton County API was the data type format, which was in Python “O” object. So, the data types were converted into integer or string as appropriate. Transforming the data type will make the data easier to use during filter and aggregate analysis in the future. Secondly, the date format had an unnecessary timestamp that was not filled with useful data. We used the str.split function and simplified the data format. We removed columns that were too specific and arranged columns in a more intuitive format. Finally, we cleaned a column data that was a long float into an int to round up the decimal places to 1. We also added a percentage symbol to the newly created data type. 
 
 
 ### Load
@@ -31,6 +35,8 @@ The final tables included in this database are:
 * Race_data_2016
 * Race_data_2020
 * Trump_2020
+
+We were also able to connect the postgres database to the google cloud platform(gcp) by connecting the postgres server using the local host's public ip address. We are currently in the process of moving the postgres tables which is stored locally, to the cloud. 
 
 # Conclusions
 
