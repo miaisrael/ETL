@@ -10,3 +10,6 @@ The purpose of this project was to demonstrate skills necessary for extracting d
 
 
 ### Load
+
+
+Google Slides: https://docs.google.com/presentation/d/1eeQtV9xKlptrDAJ_-LqI5jnpRvXs26QcaTTKGBBCtvI/edit?usp=sharing
