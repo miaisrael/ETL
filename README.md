@@ -13,7 +13,7 @@ The 2016 and 2020 election data were cleaned similarly.  First, the two CSV file
 
 ### Load
 
-A database named ga_election_db was created in PostgresSQL.  A total of eight tables were created in this database.  Once the tables were created, 
+A database named ga_election_db was created in PostgresSQL.  A total of eight tables were created in this database.  Once the tables were created, the database was accessed from the Jupyter Notebook using SQLAlchemy.  The data from each dataframe was then loaded into the Postgres database using SQLAlchemy.  Once the data was loaded into the database and confirmed using "pd.read_sql_query" for each table, a sample query was run connecting the 2020 election data and the 2020 race data by county.  The purpose of this query was to verify that the tables and connections were working appropriately.
 
 Sources:
 
