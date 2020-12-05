@@ -21,23 +21,26 @@ The 2016 and 2020 election data were cleaned similarly.  First, the two CSV file
 
 Once the dataframes were finalized, they were connected and loaded into the GA Election Database (ga_election_db) created in Postgresql, and formatted using pgAdmin 4. A total of eight tables were created in this database. Once the tables were created, the data from each dataframe was imported using SQLAlchemy.  The code "pd.read_sql_query" was used to verify that the data loaded properly into each SQL table.  Once all of the data was confirmed to have loaded correctly, a sample query was created using SQLAlchemy to demonstrate a possible use of the data, and demonstrate that the tables were appropriately connected within the database.  The sample query is shown in the Election_Data_Cleaning notebook.
 
-The final collections included in this database are:
-Biden_2020
-Election_2020_ga
-Fulton_biden_2020
-Fulton_trump_2020
-Primary_2016_ga
-Race_data_2016
-Race_data_2020
-Trump_2020
+The final tables included in this database are:
+
+* Biden_2020
+* Election_2020_ga
+* Fulton_biden_2020
+* Fulton_trump_2020
+* Primary_2016_ga
+* Race_data_2016
+* Race_data_2020
+* Trump_2020
 
 # Conclusions
 
 Georgia was a hotly contested state in the 2020 presidential election and continues to be of great national interest.  This database could be used to analyze various factors leading to the change in Georiga.  Some possible analysis could include:
 
-the change in voter populations between 2016
+* change in voter populations between 2016
+* percent of eligible voters that participated
+* race demographics and party affiliation of each county
 
-Because these data are static and were collected after the 2016 and 2020 election results were finalized, they only need to be sent at one point in time. Some limitations to the data sources in this database are that the national election results, the Georgia race and gender results, and the Fulton County results all come from different, though reliable, sources. Georgia 2020 primary results were not available and thus cannot be analyzed for comparison to 2016. When and if those become available for access, consider adding to this database for further analyses. 
+Since these data are static and were collected after the 2016 and 2020 election results were finalized, they only need to be sent at one point in time. Some limitations to the data sources in this database are that the national election results, the Georgia race and gender results, and the Fulton County results all come from different, though reliable, sources. Georgia 2020 primary results were not available and thus cannot be analyzed for comparison to 2016. When and if those become available for access, consider adding to this database for further analyses. 
 
 
 
