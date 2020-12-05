@@ -12,7 +12,7 @@ The data sources compiled include four CSV files publicly accessed through Kaggl
 
 The Georgia Secretary of State datasets include county-level voter information by race and gender. The race categories are Asian American/Pacific Islander (asia_pi), Black Non-Hispanic (black), Native American (native_am), Other (other), Unknown (unknown), and White (white). The gender categories are Female, Male, and Unknown. A relational database is needed because some potential analyses will require queries that join tables. 
 
-In order to extract data via APIs, multiple data sources were analyzed, but most require a payment/fee.  Some, such as the Google Civic Info API, were extremely documentation heavy and couldn't be completed within the time scope of this project. The Fulton County open data.gov website allowed for a fee-free and relatively simple API call.  The data was extracted using the GET function. Calls were limited to the first 2000 rows and converted into a Dataframe.
+In order to extract data via APIs, multiple data sources were analyzed, but most require a payment/fee.  Some, such as the Google Civic Info API, were extremely documentation heavy and couldn't be completed within the time scope of this project. The Fulton County open data.gov website allowed for a fee-free and relatively simple API call.  The data was extracted using the GET function. Calls were limited to the first 2000 rows and converted into a dataframe.
 
 ### Transform
 
